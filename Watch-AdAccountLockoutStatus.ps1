@@ -22,7 +22,7 @@ function Watch-AdAccountLockoutStatus {
         $name=(Get-ADUser $SamAccountName).Name
         $samaccountname=(Get-ADUser $SamAccountName).samaccountname
         
-        Write-Host ((get-date -Format ("yyyy-MM-dd HH:MM:ss")) + " | �berwachung des Accounts '" + $name + "' (" + $samaccountname + ") wird gestartet") -ForegroundColor Yellow
+        Write-Host ((get-date -Format ("yyyy-MM-dd HH:MM:ss")) + " | Überwachung des Accounts '" + $name + "' (" + $samaccountname + ") wird gestartet") -ForegroundColor Yellow
         
         while($true) {
             $lockoutstatus = (Get-ADUser $SamAccountName -Properties LockedOut).lockedout;
